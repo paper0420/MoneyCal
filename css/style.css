@@ -1,0 +1,170 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.toc {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 25px 25px;
+    margin: 25px;
+    justify-content:center;
+}
+
+    .toc div {
+        text-align: left;
+        background-color: #C9ADA7;
+        border-radius: 5px;
+        padding: 10px 30px;
+    }
+
+    .toc a {
+        color: #000000;
+    }
+
+@media (max-width: 600px) {
+    .toc {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 25px 25px;
+        margin: 25px;
+        justify-content: center;
+    }
+}
+
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 25px 25px;
+   
+}
+
+
+
+@media (max-width: 600px) {
+    .grid-3col {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 25px 25px;
+    }
+
+}
+
+.table {
+    border-collapse: collapse;
+    margin:0 auto;
+}
+
+.table tr:hover{
+    background-color:#f3f0e7;
+}
+
+    .table th {
+        background: #c9ada7;
+        padding: 10px;
+        border: 5px solid #c9ada7;
+
+    }
+    .table td {
+        border: 5px solid #c9ada7;
+        border-radius:5px;
+        padding: 10px;
+        text-align: center;
+    }
+
+.sp {
+    color:#ec8711;
+
+}
+
+.grid-1col{
+    display:grid;
+    grid-template-columns:auto;
+}
+
+.calculator {
+    background: #e6dad3;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 25px auto;
+}
+
+
+body {
+    background: #22223B;
+    background: url('https://images.assetsdelivery.com/compings_v2/hchjjl/hchjjl1504/hchjjl150400740.jpg');
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+
+header {
+    text-align: center;
+    /*background: rgba(201,173,167,0.6);
+    border-radius: 5px;
+    margin: 25px;*/
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.label {
+    display: inline-block;
+    width: 230px;
+}
+
+
+button {
+    background-color: wheat;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 5px 2px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+
+.btnCircle {
+    background: #C9ADA7;
+    text-align: center;
+    border-radius: 50%;
+    padding: 2px 2px;
+    width: 20px;
+    cursor: help;
+}
+
+.output {
+    margin-bottom: 15px;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.74);
+}
+
+.popup-subcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 10px;
+}
+
+.close-btn {
+    text-align: end;
+    font-size: 35px;
+    color: black;
+    cursor: pointer;
+}
+
+footer {
+}

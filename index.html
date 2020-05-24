@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Money Calculator</title>
+    <link href='css/style.css' rel='stylesheet' />
+
+
+</head>
+<body>
+    <header>
+        <h1>MoneyCal</h1>
+    </header>
+    <section class="toc">
+        <div>
+            <h3>Tax</h3>
+            <ul>
+                <li><a href="#tax">โปรแกรมคำนวณภาษี</a></li>
+                <li><a href="#tax">อัตราภาษีบุคคลธรรมดา</a></li>
+                <li><a href="#tax">รายการลดหย่อนภาษี 2562</a></li>
+
+            </ul>
+        </div>
+        <div>
+            <h3>Insurance</h3>
+            <ul>
+                <li><a href="#life-insurance">Life Insurance Calculator</a></li>
+                <li><a href="www.google.com">Tax Calculator</a></li>
+                <li><a href="www.google.com">Tax Calculator</a></li>
+
+            </ul>
+        </div>
+        <div>
+            <h3>Stocks and Funds</h3>
+            <ul>
+                <li><a href="www.google.com">Tax Calculator</a></li>
+                <li><a href="www.google.com">Tax Calculator</a></li>
+
+            </ul>
+        </div>
+        <div>
+            <h3>Saving and Investing</h3>
+            <ul>
+                <li><a href="#retirement">วางแผนเกษียณ</a></li>
+
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="grid-1col" >
+
+        <div class="calculator" id="retirement">
+
+            <h2>Retirement plan</h2>
+            <label>
+                <span class="label">Current age (อายุ):</span>
+                <input id="age" type="number" />
+            </label>
+            <label>
+                <span class="label">Retirement age (อายุเกษียณ):</span>
+                <input id="retirementAge" type="number" />
+            </label>
+            <label>
+                <span class="label">Life span (อายุขัย):</span>
+                <input id="lifeSpan" type="number" />
+            </label>
+            <label>
+                <span class="label">Inflation annual% (อัตราเงินเฟ้อ):</span>
+                <input id="inflation" type="number" />
+                <button class="btnCircle" onclick="openInflationInfo()">?</button>
+
+                <div class="popup-container" id="inflationInfo" onclick="closeInflationInfo()">
+                    <div class="popup-subcontainer">
+                        <div class="popup-content">
+                            <div class="close-btn" id="closebtn" onclick="closeInflationInfo()">&times;</div>
+                            <a href="https://www.statista.com/statistics/332274/inflation-rate-in-thailand/" rel="nofollow"><img src="https://www.statista.com/graphic/1/332274/inflation-rate-in-thailand.jpg" alt="Statistic: Thailand: Inflation rate from 2004 to 2024 (compared to the previous year) | Statista" style="width: 100%; height: auto !important; max-width:1000px;-ms-interpolation-mode: bicubic;" /></a><br />Find more statistics at  <a href="https://www.statista.com" rel="nofollow">Statista</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </label>
+            <label>
+                <span class="label">Expense per month (ค่าใช้จ่าย):</span>
+                <input id="expensePerMonth" type="number" />
+            </label>
+            <label>
+                <span class="label">Current saving money (เงินออมปัจจุบัน):</span>
+                <input id="currentSavingMoney" type="number" />
+            </label>
+
+            <button onclick="retirementCalInput()">Calculate</button>
+
+            <label>
+                <span>How much money you need</span>
+                <span class="output" id="retirementMoney"></span>
+            </label>
+
+            <label>
+                <span>The money you have to save per year</span>
+                <span class="output" id="savingMoney"></span>
+            </label>
+            
+            
+
+
+        </div>
+
+
+
+    </section>
+
+    <section class="grid-3col" id="tax">
+        <div class="calculator">
+            <h2>โปรแกรมคำนวณภาษี</h2>
+            <label>
+                <span class="label">Salary (เงินเดือน):</span>
+                <input id="salary" type="number" />
+            </label>
+            <label>
+                <span class="label">Annual salary (เงินเดือนต่อปี):</span>
+                <span class="output" id="annualSalary"></span>
+            </label>
+            <label>
+                <span class="label">ค่าใช้จ่ายส่วนตัว:</span>
+                <span>60,000</span>
+            </label>
+            <label>
+                <span class="label">ค่าใช้จ่ายส่วนตัวอื่นๆ:</span>
+                <input id="expens-personal-etc" type="number" />
+            </label>
+            <label>
+                <span class="label">ประกันชีวิตและการลงทุน:</span>
+                <input id="expens-insurance-invest" type="number" />
+            </label>
+
+            <label>
+                <span class="label">กระตุ้นเศรษฐกิจ:</span>
+                <input id="expens-economy" type="number" />
+            </label>
+            <label>
+                <span class="label">เงินบริจาค:</span>
+                <input id="expens-donate" type="number" />
+            </label>
+
+            <button onclick="taxCalInput()">Calculate</button>
+            <div class="output" id="taxyoupay"></div>
+        </div>
+
+        <div class="calculator">
+            <div class="table-topic">รายการลดหย่อนภาษี</div>
+            <table class="table">
+                <tr>
+                    <th colspan="4">ค่าใช้จ่ายส่วนตัว</th>
+
+                </tr>
+                <tr>
+                    <td>ส่วนตัว</td>
+                    <td>60,000</td>
+                    <td>คู่สมรส</td>
+                    <td>60,000</td>
+                </tr>
+                <tr>
+                    <td>บุตร <br />(บุตรคนต่อไป)</td>
+                    <td>30,000<br />เพิ่ม(30,000)</td>
+                    <td>ค่าคลอดบุตร</td>
+                    <td>60,000</td>
+                </tr>
+                <tr>
+                    <td>พ่อแม่(คนละ)</td>
+                    <td>30,000</td>
+                    <td>ผู้พิการ</td>
+                    <td>60,000</td>
+                </tr>
+                <tr>
+                    <th colspan="4">ประกันชีวิตและการลงทุน</th>
+                </tr>
+                <tr>
+                    <td>ประกันชีวิตและประกันสุขภาพ<br />(ประกันชีวิตทั่วไป ไม่เกิน 100,000 ประกันสุขภาพ ไม่เกิน 15,000)</td>
+                    <td>100,000</td>
+                    <td>ประกันสุขภาพพ่อแม่</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td>ประกันสังคม</td>
+                    <td>9,000</td>
+                    <td>กองทุนรวม LTF</td>
+                    <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
+                </tr>
+                <tr class="sp">
+                    <td>เบี้ยประกันชีวิตบำนาญ</td>
+                    <td>15% ของเงินได้ <br />(ไม่เกิน 200,000)</td>
+                    <td>กองทุนสำรองเลี้ยงชีพ/กบข./สงเคราะห์ครูฯ</td>
+                    <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
+                </tr>
+                <tr class="sp">
+                    <td>กองทุน RMF</td>
+                    <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
+                    <td>กองทุนการออมแห่งชาติ (กอช.)</td>
+                    <td>13,200</td>
+                </tr>
+                <tr class="sp">
+                    <td colspan="4">รวมแล้วต้องไม่เกิน 500,000</td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">กระตุ้นเศรษฐกิจ</th>
+                </tr>
+                <tr>
+                    <td>ซ่อมบ้าน (ภัยพิบัติ)</td>
+                    <td>100,000</td>
+                    <td>ซ่อมรถ (ภัยพิบัติ)</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td>เที่ยวเมืองหลักและเมืองรอง<br />(เมืองหลัก 15,000 และ เมืองรอง 20,000)</td>
+                    <td>ไม่เกิน 20,000</td>
+                    <td>ลงทุน Startup</td>
+                    <td>100,000</td>
+                </tr>
+                <tr>
+                    <td>อุปกรณ์ศึกษา/กีฬา</td>
+                    <td>15,000</td>
+                    <td>OTOP</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td>หนังสือ</td>
+                    <td>15,000</td>
+                    <td>ช็อปช่วยชาติ</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td>บ้านหลังแรก</td>
+                    <td>200,000</td>
+                    <td>ดอกเบี้ยบ้าน</td>
+                    <td>100,000</td>
+                </tr>
+                <tr>
+                    <th colspan="4">เงินบริจาค</th>
+                </tr>
+                <tr>
+                    <td>พรรคการเมือง</td>
+                    <td>10,000</td>
+                    <td>เงินบริจาคอื่นๆ</td>
+                    <td>ไม่เกิน 10% ของเงินได้หลังหักค่าใช้จ่าย-ค่าลดหย่อนอื่นแล้ว</td>
+                </tr>
+
+            </table>
+
+
+
+        </div>
+
+        <div class="calculator">
+            <div class="table-topic">อัตราภาษีบุคคลธรรมดา</div>
+            <table class="table">
+                <tr>
+                    <th>เงินได้สุทธิ</th>
+                    <th>ช่วงเงินได้</th>
+                    <th>อัตราภาษี%</th>
+                </tr>
+                <tr>
+                    <td>0 - 150,000</td>
+                    <td>150,000</td>
+                    <td>ยกเว้นภาษี</td>
+                </tr>
+                <tr>
+                    <td>150,001 - 300,000</td>
+                    <td>150,000</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td>300,001 - 500,000</td>
+                    <td>200,000</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>500,001 - 750,000</td>
+                    <td>250,000</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>750,001 - 1,000,000</td>
+                    <td>250,000</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>1,000,001 - 2,000,000</td>
+                    <td>1,000,000</td>
+                    <td>25%</td>
+                </tr>
+                <tr>
+                    <td>2,000,001 - 5,000,000</td>
+                    <td>3,000,000</td>
+                    <td>30%</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </section>
+
+    <section class="grid-1col" id="life-insurance">
+        <div class="calculator">
+            <h2>Life insurance coverage you need!!</h2>
+            <label>
+                <span class="label">Debt (หนี้):</span>
+                <input id="debt" type="number" />
+            </label>
+            <label>
+                <span class="label">Inheritance (มรดก):</span>
+                <input id="inheritance" type="number" />
+            </label>
+            <label>
+                <span class="label">Assets (ทรัพย์สิน):</span>
+                <input id="assets" type="number" />
+            </label>
+            <label>
+                <span class="label">Life insurance from employer (ประกันชีวิตจากบริษัท):</span>
+                <input id="lifeInsuranceFromEmployer" type="number" />
+            </label>
+
+            <button onclick="lifeInsurance()">Calculate</button>
+
+            <div class="output" id="lifeinsuranceneed"></div>
+        </div>
+
+    </section>
+
+    <section class="grid-1col" id="depreciation">
+        <div class="calculator">
+            <h1>Depreciation & Amortization</h1>
+            <h2>ค่าเสื่อมสภาพและค่าตัดจำหน่าย</h2>
+            <h3>Straight Line Method & Double Declining Balance Method</h3>
+            <label>
+                <span class="label">ราคาทุน</span>
+                <input id="cost" type="number" />
+            </label>
+            <label>
+                <span class="label">ราคาซาก</span>
+                <input id="salvage-value" type="number" />
+            </label>
+            <label>
+                <span class="label">อายุการใช้งาน</span>
+                <input id="useful-life" type="number" />
+            </label>
+            <div><button onclick="depreciationCalInput()">Calculate</button></div>
+
+            <label>
+                <span class="label">Straight Line Method</span>
+                <span class="output" id="depreicatiton-straigh-line">?</span>
+            </label>
+
+            <label>
+                <span class="label">Double Declining Balance Method</span>
+                <span class="output" id="depreicatiton-double-decline">?</span>
+            </label>
+            
+            <label>
+                <span class="label">Sum-of-the-Years-Digits Method</span>
+                <span class="output" id="depreicatiton-double-decline">?</span>
+            </label>
+
+        </div>
+
+    </section>
+
+    <footer>
+        &copy;Sumitra Jumrern
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
