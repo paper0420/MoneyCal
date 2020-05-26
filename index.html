@@ -5,8 +5,6 @@
     <title>Money Calculator</title>
     <link href='css/style.css' rel='stylesheet' />
     <script data-ad-client="ca-pub-2486809353271260" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
 </head>
 <body>
     <header>
@@ -22,25 +20,14 @@
             </ul>
         </div>
         <div>
-            <h3>Insurance</h3>
+            <h3>Money Plan</h3>
             <ul>
-                <li><a href="#life-insurance">Life Insurance Calculator</a></li>
+                <li><a href="#life-insurance">คำนวณวงเงินประกันชีวิตก่อนซื้อ</a></li>
+                <li><a href="#retirement">คำนวณค่าใช้จ่ายหลังเกษียณ</a></li>
+                <li><a href="#depreciation">คำนวณค่าเสื่อมสภาพและค่าตัดจำหน่าย</a></li>
             </ul>
         </div>
-        <div>
-            <h3>Stocks and Funds</h3>
-            <ul>
 
-
-            </ul>
-        </div>
-        <div>
-            <h3>Saving and Investing</h3>
-            <ul>
-                <li><a href="#retirement">วางแผนเกษียณ</a></li>
-
-            </ul>
-        </div>
 
     </section>
 
@@ -48,7 +35,7 @@
 
         <div class="calculator" id="retirement">
 
-            <h2>Retirement plan</h2>
+            <h2>คำนวณค่าใช้จ่ายหลังเกษียณ</h2>
             <label>
                 <span class="label">Current age (อายุ):</span>
                 <input id="age" type="number" />
@@ -75,7 +62,6 @@
                     </div>
                 </div>
 
-
             </label>
             <label>
                 <span class="label">Expense per month (ค่าใช้จ่าย):</span>
@@ -98,13 +84,7 @@
                 <span class="output" id="savingMoney"></span>
             </label>
 
-
-
-
         </div>
-
-
-
     </section>
 
     <section class="grid-3col" id="tax">
@@ -331,15 +311,15 @@
             <h2>ค่าเสื่อมสภาพและค่าตัดจำหน่าย</h2>
             <h3>Straight Line Method & Double Declining Balance Method</h3>
             <label>
-                <span class="label">ราคาทุน</span>
+                <span class="label">Cost (ราคาทุน)</span>
                 <input id="cost" type="number" />
             </label>
             <label>
-                <span class="label">ราคาซาก</span>
+                <span class="label">Salvage value (ราคาซาก)</span>
                 <input id="salvage-value" type="number" />
             </label>
             <label>
-                <span class="label">อายุการใช้งาน</span>
+                <span class="label">Useful life (อายุการใช้งาน)</span>
                 <input id="useful-life" type="number" />
             </label>
             <div><button onclick="depreciationCalInput()">Calculate</button></div>
@@ -356,7 +336,7 @@
 
             <label>
                 <span class="label">Sum-of-the-Years-Digits Method</span>
-                <span class="output" id="depreicatiton-double-decline"></span>
+                <span class="output" id="depreicatiton-sum"></span>
             </label>
 
         </div>

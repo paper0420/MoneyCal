@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 .toc {
     display: grid;
@@ -91,7 +92,7 @@
 body {
     background: #22223B;
     background: url('https://images.assetsdelivery.com/compings_v2/hchjjl/hchjjl1504/hchjjl150400740.jpg');
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Mali', cursive;
     position: relative;
 }
 
