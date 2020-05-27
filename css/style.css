@@ -34,7 +34,7 @@
 .grid-3col {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 25px 25px;
+    grid-gap: 20px 20px;
    
 }
 
@@ -48,6 +48,15 @@
     }
 
 }
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+
+
 
 .table {
     border-collapse: collapse;
@@ -135,7 +144,12 @@ button {
 }
 
 .output {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+
+}
+
+.calculator li{
+    margin:25px;
 }
 
 .popup-container {

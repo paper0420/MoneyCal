@@ -10,7 +10,7 @@ function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-function calculateRetirementFunds  (
+function calculateRetirementFunds(
     age,
     retirementAge,
     lifeSpan,
@@ -71,6 +71,55 @@ function retirementCalInput() {
     document.getElementById("retirementMoney").innerText = totalRetirementMoneyString;
 }
 
+function calculateSavingMoney(
+    monthSavingMoney,
+    age,
+    retirementAge) {
+
+    var worktime = retirementAge - age;
+    var savingAccInterestRate = 2 / 100;
+    var lotteryIterestRate = 1.75 / 100;
+    var bondInterestRate = 5 / 100;
+    var stockOrFunds = 10 / 100;
+
+    var yearSavingMoney = monthSavingMoney * 12;
+    //var savingMoneySavingAcc;
+    var savingWithInterest = 0;
+    var totalSavingMoneySavingAcc = 0;
+
+    for (var count = 0; count < worktime; count++) {
+        savingWithInterest = (yearSavingMoney + savingWithInterest) * (1 + savingAccInterestRate);
+       
+    }
+
+    return {
+        savingWithInterest: savingWithInterest
+        //totalSavingMoneySavingAcc: totalSavingMoneySavingAcc
+    };
+
+}
+
+function savingCalInput() {
+
+    var monthSavingMoney = parseInt(document.getElementById("monthly-saving").value);
+    var age = parseInt(document.getElementById("savingcal-age").value);
+    var retirementAge = parseInt(document.getElementById("savingcal-retirementAge").value);
+    monthSavingMoney = checkValue(monthSavingMoney);
+    age = checkValue(age);
+    retirementAge = checkValue(retirementAge);
+
+    var result = calculateSavingMoney(
+        monthSavingMoney,
+        age,
+        retirementAge);
+
+    var totalSavingMoneySavingAccountString = formatNumber(result.savingWithInterest.toFixed(0));
+
+    document.getElementById("saving-account").innerText = totalSavingMoneySavingAccountString;
+
+
+}
+
 function openInflationInfo() {
     var inflationInfo = document.getElementById("inflationInfo");
     inflationInfo.style.display = "block";
@@ -115,14 +164,14 @@ function calculateTax(
         netIncome = netIncome - 150000 - 150000;
         //netIncome = 300001 - netIncome;
         tax = netIncome * 10 / 100 + 7500;
-  
+
     }
 
     else if (netIncome >= 500001 && netIncome <= 750000) {
         netIncome = netIncome - 150000 - 150000 - 200000;
         //netIncome = netIncome - 500001;
         tax = netIncome * 15 / 100 + 7500 + 20000;
- 
+
 
     }
     else if (netIncome >= 750001 && netIncome <= 1000000) {
@@ -136,7 +185,7 @@ function calculateTax(
         netIncome = netIncome - 150000 - 150000 - 150000 - 250000 - 250000;
         //netIncome = netIncome - 1000001;
         tax = netIncome * 25 / 100 + 7500 + 20000 + 37500 + 50000;
-   
+
 
     }
     else if (netIncome >= 2000001 && netIncome <= 5000000) {
@@ -151,7 +200,7 @@ function calculateTax(
         tax = netIncome * 35 / 100 + 7500 + 20000 + 37500 + 50000 + 250000 + 900000;
 
     }
-    
+
     return {
         tax: tax,
         annualSalary: annualSalary
@@ -181,7 +230,7 @@ function taxCalInput() {
     var taxString = formatNumber(result.tax.toFixed(0));
     var annualSalaryString = formatNumber(result.annualSalary.toFixed(0));
 
-    document.getElementById("taxyoupay").innerText = "Tax you have to pay  " + taxString;
+    document.getElementById("taxyoupay").innerText = taxString;
     document.getElementById("annualSalary").innerText = annualSalaryString;
 }
 
@@ -237,14 +286,14 @@ function depreciationCalInput() {
         usefulLife);
 
     var depreciationStraighLineString = formatNumber(result.depreciaionStraightLine.toFixed(0));
-    
+
     var ul = document.createElement("ul");
     ul.type = "1";
 
     for (var count = 0; count < usefulLife; count++) {
         var li = document.createElement("li");
         li.innerText = "Year " + (count + 1) + ": " + formatNumber(result.depreDouble[count].toFixed(0));
-        
+
         ul.appendChild(li);
     }
 

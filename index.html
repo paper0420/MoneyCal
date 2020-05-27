@@ -31,25 +31,25 @@
 
     </section>
 
-    <section class="grid-1col">
+    <section class="grid-3col">
 
         <div class="calculator" id="retirement">
 
             <h2>คำนวณค่าใช้จ่ายหลังเกษียณ</h2>
             <label>
-                <span class="label">Current age (อายุ):</span>
+                <span class="label">Current age (อายุ)</span>
                 <input id="age" type="number" />
             </label>
             <label>
-                <span class="label">Retirement age (อายุเกษียณ):</span>
+                <span class="label">Retirement age (อายุเกษียณ)</span>
                 <input id="retirementAge" type="number" />
             </label>
             <label>
-                <span class="label">Life span (อายุขัย):</span>
+                <span class="label">Life span (อายุขัย)</span>
                 <input id="lifeSpan" type="number" />
             </label>
             <label>
-                <span class="label">Inflation annual% (อัตราเงินเฟ้อ):</span>
+                <span class="label">Inflation annual% (อัตราเงินเฟ้อ)</span>
                 <input id="inflation" type="number" />
                 <button class="btnCircle" onclick="openInflationInfo()">?</button>
 
@@ -61,37 +61,98 @@
                         </div>
                     </div>
                 </div>
-
             </label>
             <label>
-                <span class="label">Expense per month (ค่าใช้จ่าย):</span>
+                <span class="label">Expense per month (ค่าใช้จ่าย)</span>
                 <input id="expensePerMonth" type="number" />
             </label>
             <label>
-                <span class="label">Current saving money (เงินออมปัจจุบัน):</span>
+                <span class="label">Current saving money (เงินออมปัจจุบัน)</span>
                 <input id="currentSavingMoney" type="number" />
             </label>
 
             <button onclick="retirementCalInput()">Calculate</button>
+            <h3>ค่าใช้จ่ายทั้งหมดหลังเกษียณ</h3>
 
-            <label>
-                <span>How much money you need</span>
-                <span class="output" id="retirementMoney"></span>
-            </label>
+            <span class="output" id="retirementMoney"></span>
 
-            <label>
-                <span>The money you have to save per year</span>
-                <span class="output" id="savingMoney"></span>
-            </label>
+            <h3>เงินที่ควรออมต่อปี</h3>
+
+            <span class="output" id="savingMoney"></span>
+
 
         </div>
+
+        <div class="calculator">
+            <h2>คำนวณเงินออม</h2>
+            <label>
+                <span class="label">เงินออมในแต่ละเดือน</span>
+                <input id="monthly-saving" type="number" />
+            </label>
+            <label>
+                <span class="label">Current age (อายุ)</span>
+                <input id="savingcal-age" type="number" />
+            </label>
+            <label>
+                <span class="label">Retirement age (อายุเกษียณ)</span>
+                <input id="savingcal-retirementAge" type="number" />
+            </label>
+
+            <button onclick="savingCalInput()">Calculate</button>
+            <h3>ทางเลือกการออมและการลงทุน</h3>
+            <ul>
+                <li>
+                    เงินฝากธนาคาร ประมาณ 2% :
+                    <span class="output" id="saving-account">0</span>
+                </li>
+                <li>
+                    สลากออมสินหรือสลาก ธ.ก.ส ประมาณ 1.75% :
+                    <span class="output" id="lottery-saving">0</span>
+                </li>
+                <li>
+                    พันธบัตรหรือหุ้นกู้ ประมาณ 5% :
+                    <span class="output" id="bond-saving">0</span>
+                </li>
+                <li>
+                    ลงทุนในหุ้นหรือกองทุน ประมาณ 10% :
+                    <span class="output" id="bond-saving">0</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="calculator">
+            <h2>คำนวณวงเงินประกันชีวิตก่อนซื้อ</h2>
+            <label>
+                <span class="label">Debt (หนี้)</span>
+                <input id="debt" type="number" />
+            </label>
+            <label>
+                <span class="label">Inheritance (มรดก)</span>
+                <input id="inheritance" type="number" />
+            </label>
+            <label>
+                <span class="label">Assets (ทรัพย์สิน)</span>
+                <input id="assets" type="number" />
+            </label>
+            <label>
+                <span class="label">Life insurance from employer (ประกันชีวิตจากบริษัท)</span>
+                <input id="lifeInsuranceFromEmployer" type="number" />
+            </label>
+
+            <button onclick="lifeInsurance()">Calculate</button>
+            <h3>วงเงินประกันที่ควรซื้อ</h3>
+            <div class="output" id="lifeinsuranceneed"></div>
+
+
+        </div>
+
     </section>
 
     <section class="grid-3col" id="tax">
         <div class="calculator">
             <h2>โปรแกรมคำนวณภาษี</h2>
             <label>
-                <span class="label">Salary (เงินเดือน):</span>
+                <span class="label">Salary (เงินเดือน)</span>
                 <input id="salary" type="number" />
             </label>
             <label>
@@ -99,33 +160,34 @@
                 <span class="output" id="annualSalary"></span>
             </label>
             <label>
-                <span class="label">ค่าใช้จ่ายส่วนตัว:</span>
+                <span class="label">ค่าใช้จ่ายส่วนตัว</span>
                 <span>60,000</span>
             </label>
             <label>
-                <span class="label">ค่าใช้จ่ายส่วนตัวอื่นๆ:</span>
+                <span class="label">ค่าใช้จ่ายส่วนตัวอื่นๆ</span>
                 <input id="expens-personal-etc" type="number" />
             </label>
             <label>
-                <span class="label">ประกันชีวิตและการลงทุน:</span>
+                <span class="label">ประกันชีวิตและการลงทุน</span>
                 <input id="expens-insurance-invest" type="number" />
             </label>
 
             <label>
-                <span class="label">กระตุ้นเศรษฐกิจ:</span>
+                <span class="label">กระตุ้นเศรษฐกิจ</span>
                 <input id="expens-economy" type="number" />
             </label>
             <label>
-                <span class="label">เงินบริจาค:</span>
+                <span class="label">เงินบริจาค</span>
                 <input id="expens-donate" type="number" />
             </label>
 
             <button onclick="taxCalInput()">Calculate</button>
+            <h3>ภาษีที่ต้องจ่าย</h3>
             <div class="output" id="taxyoupay"></div>
         </div>
 
         <div class="calculator">
-            <div class="table-topic">รายการลดหย่อนภาษี</div>
+            <h2>รายการลดหย่อนภาษี</h2>
             <table class="table">
                 <tr>
                     <th colspan="4">ค่าใช้จ่ายส่วนตัว</th>
@@ -230,7 +292,7 @@
         </div>
 
         <div class="calculator">
-            <div class="table-topic">อัตราภาษีบุคคลธรรมดา</div>
+            <h2>อัตราภาษีบุคคลธรรมดา</h2>
             <table class="table">
                 <tr>
                     <th>เงินได้สุทธิ</th>
@@ -278,37 +340,10 @@
         </div>
     </section>
 
-    <section class="grid-1col" id="life-insurance">
-        <div class="calculator">
-            <h2>Life insurance coverage you need!!</h2>
-            <label>
-                <span class="label">Debt (หนี้):</span>
-                <input id="debt" type="number" />
-            </label>
-            <label>
-                <span class="label">Inheritance (มรดก):</span>
-                <input id="inheritance" type="number" />
-            </label>
-            <label>
-                <span class="label">Assets (ทรัพย์สิน):</span>
-                <input id="assets" type="number" />
-            </label>
-            <label>
-                <span class="label">Life insurance from employer (ประกันชีวิตจากบริษัท):</span>
-                <input id="lifeInsuranceFromEmployer" type="number" />
-            </label>
-
-            <button onclick="lifeInsurance()">Calculate</button>
-
-            <div class="output" id="lifeinsuranceneed"></div>
-        </div>
-
-    </section>
 
     <section class="grid-1col" id="depreciation">
         <div class="calculator">
-            <h1>Depreciation & Amortization</h1>
-            <h2>ค่าเสื่อมสภาพและค่าตัดจำหน่าย</h2>
+            <h1>ค่าเสื่อมสภาพและค่าตัดจำหน่าย</h1>
             <h3>Straight Line Method & Double Declining Balance Method</h3>
             <label>
                 <span class="label">Cost (ราคาทุน)</span>
