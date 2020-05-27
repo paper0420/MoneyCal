@@ -71,30 +71,43 @@ function retirementCalInput() {
     document.getElementById("retirementMoney").innerText = totalRetirementMoneyString;
 }
 
+function totalSavingMoney(savingMoneyPerYear, yearsOfWork, interesRate) {
+
+    var savingWithInterest = 0;
+    for (var count = 0; count < yearsOfWork; count++) {
+        savingWithInterest = (savingMoneyPerYear + savingWithInterest) * (1 + interesRate);
+
+    }
+
+    return savingWithInterest;
+}
+
 function calculateSavingMoney(
     monthSavingMoney,
     age,
     retirementAge) {
 
-    var worktime = retirementAge - age;
+    var yearsOfWork = retirementAge - age;
     var savingAccInterestRate = 2 / 100;
     var lotteryIterestRate = 1.75 / 100;
     var bondInterestRate = 5 / 100;
-    var stockOrFunds = 10 / 100;
+    var stockOrFundsInterestRate = 10 / 100;
 
-    var yearSavingMoney = monthSavingMoney * 12;
-    //var savingMoneySavingAcc;
-    var savingWithInterest = 0;
-    var totalSavingMoneySavingAcc = 0;
+    var savingMoneyPerYear = monthSavingMoney * 12;
 
-    for (var count = 0; count < worktime; count++) {
-        savingWithInterest = (yearSavingMoney + savingWithInterest) * (1 + savingAccInterestRate);
-       
-    }
+
+    var totalSavingMoneySavingAcc = totalSavingMoney(savingMoneyPerYear, yearsOfWork, savingAccInterestRate);
+    var totalSavingMoneyLottery = totalSavingMoney(savingMoneyPerYear, yearsOfWork, lotteryIterestRate);
+    var totalSavingMoneyBond = totalSavingMoney(savingMoneyPerYear, yearsOfWork, bondInterestRate);
+    var totalSavingMoneStockFunds = totalSavingMoney(savingMoneyPerYear, yearsOfWork, stockOrFundsInterestRate);
+
+
 
     return {
-        savingWithInterest: savingWithInterest
-        //totalSavingMoneySavingAcc: totalSavingMoneySavingAcc
+        totalSavingMoneySavingAcc: totalSavingMoneySavingAcc,
+        totalSavingMoneyLottery: totalSavingMoneyLottery,
+        totalSavingMoneyBond: totalSavingMoneyBond,
+        totalSavingMoneStockFunds: totalSavingMoneStockFunds
     };
 
 }
@@ -113,9 +126,17 @@ function savingCalInput() {
         age,
         retirementAge);
 
-    var totalSavingMoneySavingAccountString = formatNumber(result.savingWithInterest.toFixed(0));
+    var totalSavingMoneySavingAccountString = formatNumber(result.totalSavingMoneySavingAcc.toFixed(0));
+    var totalSavingMoneyLotteryString = formatNumber(result.totalSavingMoneyLottery.toFixed(0));
+    var totalSavingMoneyBondString = formatNumber(result.totalSavingMoneyBond.toFixed(0));
+    var totalSavingMoneyStockFundsString = formatNumber(result.totalSavingMoneStockFunds.toFixed(0));
+    
 
     document.getElementById("saving-account").innerText = totalSavingMoneySavingAccountString;
+    document.getElementById("lottery-saving").innerText = totalSavingMoneyLotteryString;
+    document.getElementById("bond-saving").innerText = totalSavingMoneyBondString;
+    document.getElementById("stockfunds-saving").innerText = totalSavingMoneyStockFundsString;
+
 
 
 }
