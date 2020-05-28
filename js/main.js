@@ -121,6 +121,8 @@ function savingCalInput() {
     age = checkValue(age);
     retirementAge = checkValue(retirementAge);
 
+    yearsofWork = retirementAge - age;
+
     var result = calculateSavingMoney(
         monthSavingMoney,
         age,
@@ -137,8 +139,8 @@ function savingCalInput() {
     document.getElementById("bond-saving").innerText = totalSavingMoneyBondString;
     document.getElementById("stockfunds-saving").innerText = totalSavingMoneyStockFundsString;
 
-
-
+    document.getElementById("yearsofWork").innerText = yearsofWork;
+    
 }
 
 function openInflationInfo() {

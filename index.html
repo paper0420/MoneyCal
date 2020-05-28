@@ -37,19 +37,19 @@
 
             <h2>คำนวณค่าใช้จ่ายหลังเกษียณ</h2>
             <label>
-                <span class="label">Current age (อายุ)</span>
+                <span class="label">อายุปัจจุบัน</span>
                 <input id="age" type="number" />
             </label>
             <label>
-                <span class="label">Retirement age (อายุเกษียณ)</span>
+                <span class="label">อายุเกษียณ</span>
                 <input id="retirementAge" type="number" />
             </label>
             <label>
-                <span class="label">Life span (อายุขัย)</span>
+                <span class="label">อายุขัย</span>
                 <input id="lifeSpan" type="number" />
             </label>
             <label>
-                <span class="label">Inflation annual% (อัตราเงินเฟ้อ)</span>
+                <span class="label">อัตราเงินเฟ้อ</span>
                 <input id="inflation" type="number" />
                 <button class="btnCircle" onclick="openInflationInfo()">?</button>
 
@@ -63,11 +63,11 @@
                 </div>
             </label>
             <label>
-                <span class="label">Expense per month (ค่าใช้จ่าย)</span>
+                <span class="label">ค่าใช้จ่ายรายเดือน ณ ปัจจุบัน (ใช้ในการประมาณค่าใช้จ่ายหลังเกษียณโดยคำนวณอัตราเงินเฟ้อ)</span>
                 <input id="expensePerMonth" type="number" />
             </label>
             <label>
-                <span class="label">Current saving money (เงินออมปัจจุบัน)</span>
+                <span class="label">เงินออมปัจจุบัน</span>
                 <input id="currentSavingMoney" type="number" />
             </label>
 
@@ -90,12 +90,16 @@
                 <input id="monthly-saving" type="number" />
             </label>
             <label>
-                <span class="label">Current age (อายุ)</span>
+                <span class="label">เริ่มต้นออมเมื่ออายุ</span>
                 <input id="savingcal-age" type="number" />
             </label>
             <label>
-                <span class="label">Retirement age (อายุเกษียณ)</span>
+                <span class="label">อายุเกษียณ</span>
                 <input id="savingcal-retirementAge" type="number" />
+            </label>
+            <label>
+                <span class="label">ระยะเวลาในการออม(ปี)</span>
+                <span id="yearsofWork"></span>
             </label>
 
             <button onclick="savingCalInput()">Calculate</button>
@@ -123,19 +127,19 @@
         <div class="calculator">
             <h2>คำนวณวงเงินประกันชีวิตก่อนซื้อ</h2>
             <label>
-                <span class="label">Debt (หนี้)</span>
+                <span class="label">หนี้สิน</span>
                 <input id="debt" type="number" />
             </label>
             <label>
-                <span class="label">Inheritance (มรดก)</span>
+                <span class="label">มรดกที่ต้องการให้ลูกหลาน</span>
                 <input id="inheritance" type="number" />
             </label>
             <label>
-                <span class="label">Assets (ทรัพย์สิน)</span>
+                <span class="label">ทรัพย์สิน</span>
                 <input id="assets" type="number" />
             </label>
             <label>
-                <span class="label">Life insurance from employer (ประกันชีวิตจากบริษัท)</span>
+                <span class="label">ประกันชีวิตของบริษัท</span>
                 <input id="lifeInsuranceFromEmployer" type="number" />
             </label>
 
