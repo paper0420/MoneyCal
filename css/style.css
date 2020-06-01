@@ -52,8 +52,11 @@
 .grid-2col {
     display: grid;
     grid-template-columns: auto auto;
+    grid-gap: 25px;
 
 }
+
+
 
 
 
@@ -179,6 +182,14 @@ button {
     font-size: 35px;
     color: black;
     cursor: pointer;
+}
+
+#cal-depreciation{
+    width:700px;
+}
+
+.ordered {
+    list-style-type:decimal;
 }
 
 footer {

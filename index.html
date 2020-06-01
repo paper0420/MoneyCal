@@ -12,11 +12,12 @@
     </header>
     <section class="toc">
         <div>
-            <h3>Tax</h3>
+            <h3>Accounting</h3>
             <ul>
                 <li><a href="#tax">โปรแกรมคำนวณภาษี</a></li>
                 <li><a href="#tax">อัตราภาษีบุคคลธรรมดา</a></li>
                 <li><a href="#tax">รายการลดหย่อนภาษี 2562</a></li>
+                <li><a href="#depreciation">คำนวณค่าเสื่อมสภาพและค่าตัดจำหน่าย</a></li>
             </ul>
         </div>
         <div>
@@ -24,7 +25,9 @@
             <ul>
                 <li><a href="#life-insurance">คำนวณวงเงินประกันชีวิตก่อนซื้อ</a></li>
                 <li><a href="#retirement">คำนวณค่าใช้จ่ายหลังเกษียณ</a></li>
-                <li><a href="#depreciation">คำนวณค่าเสื่อมสภาพและค่าตัดจำหน่าย</a></li>
+                <li><a href="#saving-cal">คำนวณเงินออมแบบ DCA</a></li>
+
+
             </ul>
         </div>
 
@@ -83,8 +86,8 @@
 
         </div>
 
-        <div class="calculator">
-            <h2>คำนวณเงินออม</h2>
+        <div class="calculator" id="saving-cal">
+            <h2>คำนวณเงินออมแบบ DCA</h2>
             <label>
                 <span class="label">เงินออมในแต่ละเดือน</span>
                 <input id="monthly-saving" type="number" />
@@ -345,10 +348,21 @@
     </section>
 
 
-    <section class="grid-1col" id="depreciation">
-        <div class="calculator">
-            <h1>ค่าเสื่อมสภาพและค่าตัดจำหน่าย</h1>
-            <h3>Straight Line Method & Double Declining Balance Method</h3>
+    <section class="grid-2col" id="depreciation">
+        <div class="calculator" id="cal-depreciation">
+            <h1>ค่าเสื่อมสภาพ(Depreciation)และค่าตัดจำหน่าย(Amortization)</h1>
+            <h3>
+                สินทรัพย์ที่บริษัทหรือกิจการนำมาใช้ประโยชน์โดยเป็นสินทรัพย์ที่มีราคาสูงและมีอายุการใช้งานมากกว่า 1 ปี จนกระทั่งหมดอายุการใช้งาน สินทรัพย์ก็จะมีการเสื่อมค่าลงตามการใช้งานราคาทุนของสินทรัพย์ก็จะถูกลดค่าลงด้วยจำนวนค่าเสื่อมราคานับตั้งแต่วันที่เริ่มใช้จนถึงปัจจุบัน ถ้าหากไม่มีการใช้วิธีหักค่าเสื่อมราคา นั่นหมายถึง เงินที่ใช้ในการซื้อสินทรัพย์จะกลายเป็นค่าใช้จ่ายทั้งหมดในทันทีซึ่งส่งผลกระทบต่องบกำไรขาดทุนอย่างมาก
+            </h3>
+            <ul>
+                <li>
+                    ค่าเสื่อมราคาใช้กับสินทรัพย์ที่มีตัวตน เช่น อาคาร อุปกรณ์
+                </li>
+                <li>
+                    ค่าตัดจำหน่ายใช้กับสินทรัพย์ไม่มีตัวตน เช่น สิทธิการเช่า ลิขสิทธิ์ ทรัพย์สินทางปัญญา
+                </li>
+            </ul>
+                   
             <label>
                 <span class="label">Cost (ราคาทุน)</span>
                 <input id="cost" type="number" />
@@ -363,20 +377,29 @@
             </label>
             <div><button onclick="depreciationCalInput()">Calculate</button></div>
 
-            <label>
-                <span class="label">Straight Line Method</span>
-                <span class="output" id="depreicatiton-straigh-line"></span>
-            </label>
 
-            <label>
-                <span class="label">Double Declining Balance Method</span>
-                <span class="output" id="depreicatiton-double-decline"></span>
-            </label>
+        </div>
 
-            <label>
-                <span class="label">Sum-of-the-Years-Digits Method</span>
-                <span class="output" id="depreicatiton-sum"></span>
-            </label>
+        <div class="calculator">
+            <h3>การคำนวณค่าเสื่อมสภาพคำนวณได้ทั้งสิ้น 4 แบบ</h3>
+            <ul class="ordered">
+                <li>
+                    Straight Line Method : 
+                    <span class="output" id="depreicatiton-straigh-line">0</span>
+                </li>
+                <li>
+                    Double Declining Balance Method :
+                    <span class="output" id="depreicatiton-double-decline">0</span>
+                </li>
+                <li>
+                    Sum-of-the-Years-Digits Method : 
+                    <span class="output" id="depreicatiton-sum">0</span>
+                </li>
+                <li>
+                    Units of Production Depreciation Method
+                    <span class="output" id="depreicatiton-units">0</span>
+                </li>
+            </ul>
 
         </div>
 
