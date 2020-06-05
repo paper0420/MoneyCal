@@ -32,7 +32,7 @@ header{
         color: #000000;
     }
 
-@media (max-width: 812px) {
+@media (max-width: 900px) {
     .toc {
         display: grid;
         grid-template-columns: auto;
@@ -51,7 +51,7 @@ header{
 
 
 
-@media (max-width: 812px) {
+@media (max-width: 900px) {
     .grid-3col {
         display: grid;
         grid-template-columns: 1fr;
