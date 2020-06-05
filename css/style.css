@@ -1,12 +1,24 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+header nav{
+    height:50px;
+}
+
+header nav h1 {
+    display: inline-block;
+    
+}
+header{
+   text-align:center;
+}
+
 
 .toc {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 25px 25px;
     margin: 25px;
-    justify-content:center;
+    justify-content: center;
 }
 
     .toc div {
@@ -20,7 +32,7 @@
         color: #000000;
     }
 
-@media (max-width: 600px) {
+@media (max-width: 812px) {
     .toc {
         display: grid;
         grid-template-columns: auto;
@@ -35,25 +47,22 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 20px 20px;
-   
 }
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 812px) {
     .grid-3col {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 25px 25px;
     }
-
 }
 
 .grid-2col {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 25px;
-
 }
 
 
@@ -63,34 +72,33 @@
 
 .table {
     border-collapse: collapse;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.table tr:hover{
-    background-color:#f3f0e7;
-}
+    .table tr:hover {
+        background-color: #f3f0e7;
+    }
 
     .table th {
         background: #c9ada7;
         padding: 10px;
         border: 5px solid #c9ada7;
-
     }
+
     .table td {
         border: 5px solid #c9ada7;
-        border-radius:5px;
+        border-radius: 5px;
         padding: 10px;
         text-align: center;
     }
 
 .sp {
-    color:#ec8711;
-
+    color: #ec8711;
 }
 
-.grid-1col{
-    display:grid;
-    grid-template-columns:auto;
+.grid-1col {
+    display: grid;
+    grid-template-columns: auto;
 }
 
 .calculator {
@@ -109,12 +117,7 @@ body {
 }
 
 
-header {
-    text-align: center;
-    /*background: rgba(201,173,167,0.6);
-    border-radius: 5px;
-    margin: 25px;*/
-}
+
 
 label {
     display: block;
@@ -148,11 +151,10 @@ button {
 
 .output {
     margin-bottom: 30px;
-
 }
 
-.calculator li{
-    margin:25px;
+.calculator li {
+    margin: 25px;
 }
 
 .popup-container {
@@ -184,12 +186,12 @@ button {
     cursor: pointer;
 }
 
-#cal-depreciation{
-    width:700px;
+#cal-depreciation {
+    width: 700px;
 }
 
 .ordered {
-    list-style-type:decimal;
+    list-style-type: decimal;
 }
 
 footer {

@@ -132,7 +132,7 @@ function savingCalInput() {
     var totalSavingMoneyLotteryString = formatNumber(result.totalSavingMoneyLottery.toFixed(0));
     var totalSavingMoneyBondString = formatNumber(result.totalSavingMoneyBond.toFixed(0));
     var totalSavingMoneyStockFundsString = formatNumber(result.totalSavingMoneStockFunds.toFixed(0));
-    
+
 
     document.getElementById("saving-account").innerText = totalSavingMoneySavingAccountString;
     document.getElementById("lottery-saving").innerText = totalSavingMoneyLotteryString;
@@ -140,7 +140,7 @@ function savingCalInput() {
     document.getElementById("stockfunds-saving").innerText = totalSavingMoneyStockFundsString;
 
     document.getElementById("yearsofWork").innerText = yearsofWork;
-    
+
 }
 
 function openInflationInfo() {
@@ -328,4 +328,32 @@ function depreciationCalInput() {
     el.appendChild(ul);
 
 }
+
+var x = 1;
+
+function writeTime() {
+    x += 1;
+
+    if (x > 10) {
+        clearInterval(timer);
+    }
+
+    console.log(new Date());
+}
+
+var timer = setInterval(writeTime, 1000 * 60 * 30);
+
+
+//fetch('https://cloud.iexapis.com/stable/stock/IBM/quote?token=sk_89a873c67e7b4edca3b8e0dda9b5d905')
+    .then(response => {
+        console.log(response);
+        //console.log(response.json());
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        var el = document.getElementById("x");
+        //el.innerHTML = JSON.stringify(data);
+        el.innerHTML = data.peRatio;
+    });
 
