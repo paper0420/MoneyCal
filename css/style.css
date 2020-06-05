@@ -52,12 +52,13 @@ header{
 
 
 @media (max-width: 900px) {
-    .grid-3col {
+.grid-3col {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 25px 25px;
     }
 }
+
 
 .grid-2col {
     display: grid;
@@ -66,7 +67,13 @@ header{
 }
 
 
-
+@media (max-width: 900px) {
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 25px 25px;
+    }
+}
 
 
 
