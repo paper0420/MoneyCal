@@ -9,14 +9,11 @@
 </head>
 <body>
     <header>
-        <nav>
-            <h1>MoneyCal</h1>
-            <a href="news.html">News</a>
-            <a href="news.html">About</a>
-        </nav>
-        
+        <a class="web-name" href="index.html"><strong>MoneyCal</strong></a>
+        <a href="news.html">News</a>
+        <a href="news.html">About</a>
     </header>
-    <section class="toc" id="x">
+    <section class="toc">
         <div>
             <h3>Accounting</h3>
             <ul>
@@ -32,33 +29,29 @@
                 <li><a href="#life-insurance">คำนวณวงเงินประกันชีวิตก่อนซื้อ</a></li>
                 <li><a href="#retirement">คำนวณค่าใช้จ่ายหลังเกษียณ</a></li>
                 <li><a href="#saving-cal">คำนวณเงินออมแบบ DCA</a></li>
-
-
             </ul>
-        </div>
-
-
+       </div>
     </section>
 
     <section class="grid-3col">
 
-        <div class="calculator" id="retirement">
+        <div class="calculator">
 
             <h2>คำนวณค่าใช้จ่ายหลังเกษียณ</h2>
             <label>
-                <span class="label">อายุปัจจุบัน</span>
+                <span class="label-name">อายุปัจจุบัน</span>
                 <input id="age" type="number" />
             </label>
             <label>
-                <span class="label">อายุเกษียณ</span>
+                <span class="label-name">อายุเกษียณ</span>
                 <input id="retirementAge" type="number" />
             </label>
             <label>
-                <span class="label">อายุขัย</span>
+                <span class="label-name">อายุขัย</span>
                 <input id="lifeSpan" type="number" />
             </label>
             <label>
-                <span class="label">อัตราเงินเฟ้อ</span>
+                <span class="label-name">อัตราเงินเฟ้อ</span>
                 <input id="inflation" type="number" />
                 <button class="btnCircle" onclick="openInflationInfo()">?</button>
 
@@ -72,11 +65,11 @@
                 </div>
             </label>
             <label>
-                <span class="label">ค่าใช้จ่ายรายเดือน ณ ปัจจุบัน (ใช้ในการประมาณค่าใช้จ่ายหลังเกษียณโดยคำนวณอัตราเงินเฟ้อ)</span>
+                <span class="label-name">ค่าใช้จ่ายรายเดือน ณ ปัจจุบัน (ใช้ในการประมาณค่าใช้จ่ายหลังเกษียณโดยคำนวณอัตราเงินเฟ้อ)</span>
                 <input id="expensePerMonth" type="number" />
             </label>
             <label>
-                <span class="label">เงินออมปัจจุบัน</span>
+                <span class="label-name">เงินออมปัจจุบัน</span>
                 <input id="currentSavingMoney" type="number" />
             </label>
 
@@ -92,22 +85,22 @@
 
         </div>
 
-        <div class="calculator" id="saving-cal">
+        <div class="calculator">
             <h2>คำนวณเงินออมแบบ DCA</h2>
             <label>
-                <span class="label">เงินออมในแต่ละเดือน</span>
+                <span class="label-name">เงินออมในแต่ละเดือน</span>
                 <input id="monthly-saving" type="number" />
             </label>
             <label>
-                <span class="label">เริ่มต้นออมเมื่ออายุ</span>
+                <span class="label-name">เริ่มต้นออมเมื่ออายุ</span>
                 <input id="savingcal-age" type="number" />
             </label>
             <label>
-                <span class="label">อายุเกษียณ</span>
+                <span class="label-name">อายุเกษียณ</span>
                 <input id="savingcal-retirementAge" type="number" />
             </label>
             <label>
-                <span class="label">ระยะเวลาในการออม(ปี)</span>
+                <span class="label-name">ระยะเวลาในการออม(ปี)</span>
                 <span id="yearsofWork"></span>
             </label>
 
@@ -136,19 +129,19 @@
         <div class="calculator">
             <h2>คำนวณวงเงินประกันชีวิตก่อนซื้อ</h2>
             <label>
-                <span class="label">หนี้สิน</span>
+                <span class="label-name">หนี้สิน</span>
                 <input id="debt" type="number" />
             </label>
             <label>
-                <span class="label">มรดกที่ต้องการให้ลูกหลาน</span>
+                <span class="label-name">มรดกที่ต้องการให้ลูกหลาน</span>
                 <input id="inheritance" type="number" />
             </label>
             <label>
-                <span class="label">ทรัพย์สิน</span>
+                <span class="label-name">ทรัพย์สิน</span>
                 <input id="assets" type="number" />
             </label>
             <label>
-                <span class="label">ประกันชีวิตของบริษัท</span>
+                <span class="label-name">ประกันชีวิตของบริษัท</span>
                 <input id="lifeInsuranceFromEmployer" type="number" />
             </label>
 
@@ -161,36 +154,36 @@
 
     </section>
 
-    <section class="grid-3col" id="tax">
+    <section class="grid-3col">
         <div class="calculator">
             <h2>โปรแกรมคำนวณภาษี</h2>
             <label>
-                <span class="label">Salary (เงินเดือน)</span>
+                <span class="label-name">Salary (เงินเดือน)</span>
                 <input id="salary" type="number" />
             </label>
             <label>
-                <span class="label">Annual salary (เงินเดือนต่อปี):</span>
+                <span class="label-name">Annual salary (เงินเดือนต่อปี):</span>
                 <span class="output" id="annualSalary"></span>
             </label>
             <label>
-                <span class="label">ค่าใช้จ่ายส่วนตัว</span>
+                <span class="label-name">ค่าใช้จ่ายส่วนตัว</span>
                 <span>60,000</span>
             </label>
             <label>
-                <span class="label">ค่าใช้จ่ายส่วนตัวอื่นๆ</span>
+                <span class="label-name">ค่าใช้จ่ายส่วนตัวอื่นๆ</span>
                 <input id="expens-personal-etc" type="number" />
             </label>
             <label>
-                <span class="label">ประกันชีวิตและการลงทุน</span>
+                <span class="label-name">ประกันชีวิตและการลงทุน</span>
                 <input id="expens-insurance-invest" type="number" />
             </label>
 
             <label>
-                <span class="label">กระตุ้นเศรษฐกิจ</span>
+                <span class="label-name">กระตุ้นเศรษฐกิจ</span>
                 <input id="expens-economy" type="number" />
             </label>
             <label>
-                <span class="label">เงินบริจาค</span>
+                <span class="label-name">เงินบริจาค</span>
                 <input id="expens-donate" type="number" />
             </label>
 
@@ -239,19 +232,19 @@
                     <td>กองทุนรวม LTF</td>
                     <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
                 </tr>
-                <tr class="sp">
+                <tr class="tax-special">
                     <td>เบี้ยประกันชีวิตบำนาญ</td>
                     <td>15% ของเงินได้ <br />(ไม่เกิน 200,000)</td>
                     <td>กองทุนสำรองเลี้ยงชีพ/กบข./สงเคราะห์ครูฯ</td>
                     <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
                 </tr>
-                <tr class="sp">
+                <tr class="tax-special">
                     <td>กองทุน RMF</td>
                     <td>15% ของเงินได้ <br />(ไม่เกิน 500,000)</td>
                     <td>กองทุนการออมแห่งชาติ (กอช.)</td>
                     <td>13,200</td>
                 </tr>
-                <tr class="sp">
+                <tr class="tax-special">
                     <td colspan="4">รวมแล้วต้องไม่เกิน 500,000</td>
                 </tr>
 
@@ -354,8 +347,8 @@
     </section>
 
 
-    <section class="grid-2col" id="depreciation">
-        <div class="calculator" id="cal-depreciation">
+    <section class="grid-2col">
+        <div class="calculator">
             <h1>ค่าเสื่อมสภาพ(Depreciation)และค่าตัดจำหน่าย(Amortization)</h1>
             <h3>
                 สินทรัพย์ที่บริษัทหรือกิจการนำมาใช้ประโยชน์โดยเป็นสินทรัพย์ที่มีราคาสูงและมีอายุการใช้งานมากกว่า 1 ปี จนกระทั่งหมดอายุการใช้งาน สินทรัพย์ก็จะมีการเสื่อมค่าลงตามการใช้งานราคาทุนของสินทรัพย์ก็จะถูกลดค่าลงด้วยจำนวนค่าเสื่อมราคานับตั้งแต่วันที่เริ่มใช้จนถึงปัจจุบัน ถ้าหากไม่มีการใช้วิธีหักค่าเสื่อมราคา นั่นหมายถึง เงินที่ใช้ในการซื้อสินทรัพย์จะกลายเป็นค่าใช้จ่ายทั้งหมดในทันทีซึ่งส่งผลกระทบต่องบกำไรขาดทุนอย่างมาก
@@ -368,17 +361,17 @@
                     ค่าตัดจำหน่ายใช้กับสินทรัพย์ไม่มีตัวตน เช่น สิทธิการเช่า ลิขสิทธิ์ ทรัพย์สินทางปัญญา
                 </li>
             </ul>
-                   
+
             <label>
-                <span class="label">Cost (ราคาทุน)</span>
+                <span class="label-name">Cost (ราคาทุน)</span>
                 <input id="cost" type="number" />
             </label>
             <label>
-                <span class="label">Salvage value (ราคาซาก)</span>
+                <span class="label-name">Salvage value (ราคาซาก)</span>
                 <input id="salvage-value" type="number" />
             </label>
             <label>
-                <span class="label">Useful life (อายุการใช้งาน)</span>
+                <span class="label-name">Useful life (อายุการใช้งาน)</span>
                 <input id="useful-life" type="number" />
             </label>
             <div><button onclick="depreciationCalInput()">Calculate</button></div>
@@ -388,9 +381,9 @@
 
         <div class="calculator">
             <h3>การคำนวณค่าเสื่อมสภาพคำนวณได้ทั้งสิ้น 4 แบบ</h3>
-            <ul class="ordered">
+            <ul class="depreciation-ordered">
                 <li>
-                    Straight Line Method : 
+                    Straight Line Method :
                     <span class="output" id="depreicatiton-straigh-line">0</span>
                 </li>
                 <li>
@@ -398,7 +391,7 @@
                     <span class="output" id="depreicatiton-double-decline">0</span>
                 </li>
                 <li>
-                    Sum-of-the-Years-Digits Method : 
+                    Sum-of-the-Years-Digits Method :
                     <span class="output" id="depreicatiton-sum">0</span>
                 </li>
                 <li>

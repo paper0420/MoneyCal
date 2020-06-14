@@ -1,15 +1,19 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
-header nav{
-    height:50px;
+
+header{
+    padding:20px 0;
 }
 
-header nav h1 {
-    display: inline-block;
-    
+header a {
+    padding:20px;
+    text-decoration: none;
+    color:black;
 }
-header{
-   text-align:center;
+
+.web-name{
+    font-size: 20px;
+
 }
 
 
@@ -56,6 +60,7 @@ header{
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 25px 25px;
+        margin:25px;
     }
 }
 
@@ -72,6 +77,7 @@ header{
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 25px 25px;
+        margin:25px;
     }
 }
 
@@ -99,21 +105,23 @@ header{
         text-align: center;
     }
 
-.sp {
+.tax-special {
     color: #ec8711;
 }
 
-.grid-1col {
-    display: grid;
-    grid-template-columns: auto;
-}
+
 
 .calculator {
     background: #e6dad3;
     border-radius: 5px;
     padding: 10px 30px;
-    margin: 25px auto;
+    margin: 25px 0;
+    transition: all 1s;
 }
+
+    .calculator:hover {
+        transform: scale(1.1);
+    }
 
 
 body {
@@ -124,14 +132,12 @@ body {
 }
 
 
-
-
 label {
     display: block;
     margin-bottom: 15px;
 }
 
-.label {
+.label-name {
     display: inline-block;
     width: 230px;
 }
@@ -164,6 +170,8 @@ button {
     margin: 25px;
 }
 
+/*Pop up CSS*/
+
 .popup-container {
     display: none;
     position: fixed;
@@ -193,13 +201,9 @@ button {
     cursor: pointer;
 }
 
-#cal-depreciation {
-    width: 700px;
-}
+/*----------------------------------------------------*/
 
-.ordered {
+.depreciation-ordered {
     list-style-type: decimal;
 }
 
-footer {
-}

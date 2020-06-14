@@ -1,0 +1,16 @@
+﻿.container {
+
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 25px auto;
+    background-color:aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    transition:all 1s;
+
+}
+.container:hover{
+    transform:scale(1.1);
+}
+
