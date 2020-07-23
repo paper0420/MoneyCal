@@ -1,5 +1,3 @@
-var _ = require('lodash');
-console.log(_);
 
 function checkValue(x) {
     if (isNaN(x)) {
@@ -347,16 +345,16 @@ function writeTime() {
 var timer = setInterval(writeTime, 1000 * 60 * 30);
 
 
-//fetch('https://cloud.iexapis.com/stable/stock/IBM/quote?token=sk_89a873c67e7b4edca3b8e0dda9b5d905')
-    .then(response => {
-        console.log(response);
-        //console.log(response.json());
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        var el = document.getElementById("x");
-        //el.innerHTML = JSON.stringify(data);
-        el.innerHTML = data.peRatio;
-    });
+// //fetch('https://cloud.iexapis.com/stable/stock/IBM/quote?token=sk_89a873c67e7b4edca3b8e0dda9b5d905')
+//     .then(response => {
+//         console.log(response);
+//         //console.log(response.json());
+//         return response.json();
+//     })
+//     .then(data => {
+//         console.log(data);
+//         var el = document.getElementById("x");
+//         //el.innerHTML = JSON.stringify(data);
+//         el.innerHTML = data.peRatio;
+//     });
 
