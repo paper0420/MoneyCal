@@ -116,12 +116,12 @@ header a {
     border-radius: 5px;
     padding: 10px 30px;
     margin: 25px 0;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 
-    .calculator:hover {
+    /* .calculator:hover {
         transform: scale(1.1);
-    }
+    } */
 
 
 body {

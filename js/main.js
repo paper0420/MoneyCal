@@ -1,3 +1,6 @@
+var _ = require('lodash');
+console.log(_);
+
 function checkValue(x) {
     if (isNaN(x)) {
         return 0;
